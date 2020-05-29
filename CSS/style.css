@@ -1,0 +1,12 @@
+*
+{
+	margin: 0;
+	padding: 0;
+}
+header
+{
+	background-image: url(https://github.com/Nanoichromic/Nanoichromic.github.io/blob/master/Images/Wix%20Logo.jpg);
+	height: 100;	
+	background-size: cover;
+	background-position: center;
+}
