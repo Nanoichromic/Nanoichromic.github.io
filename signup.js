@@ -1,6 +1,3 @@
-
-
-<script>
   // Your web app's Firebase configuration
   var firebaseConfig = {
     apiKey: "AIzaSyCfuRp_zi27fqIcZzvJrvrEVAI0IF9t74w",
@@ -15,4 +12,16 @@
   // Initialize Firebase
   firebase.initializeApp(firebaseConfig);
   firebase.analytics();
-</script>
+  const auth = firebase.auth();
+
+  function signUp() {
+    var email = document.getElementById('email');
+    var password = document.getElementById('password');
+    var passwordConfirm = document.getElementById('passwordConfirm');
+
+
+    const promise = auth.createUserWithEmailAndPassword(email.value, password.value)
+    if password.value != passwordConfirm.value{
+      alert("Confirm It");
+    }
+  }
