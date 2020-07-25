@@ -21,7 +21,12 @@
 
 
     const promise = auth.createUserWithEmailAndPassword(email.value, password.value)
-    if password.value != passwordConfirm.value{
-      alert("Confirm It");
-    }
+    promise.catch(e=> alert(e.message));
+    alert("signUp")
+
+    
+  }
+
+  function signIn(argument) {
+    // body...
   }
