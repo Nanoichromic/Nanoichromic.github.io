@@ -55,23 +55,23 @@
     appId: "1:830719309449:web:585f99c08c9bdaa623f858",
     measurementId: "G-PT6MZ9WN9P"
   };
-  // Initialize Firebase
+    // Initialize Firebase
   firebase.initializeApp(firebaseConfig);
-  firebase.analytics();
-  const auth = firebase.auth();
+  
+	const auth = firebase.auth();
+	
+	
+	function signUp(){
+		
+		var email = document.getElementById("email");
+		var password = document.getElementById("password");
+		
+		const promise = auth.createUserWithEmailAndPassword(email.value, password.value);
+		promise.catch(e => alert(e.message));
+		
+		alert("Signed Up");
+	}
 
-  function signUp() {
-    var email = document.getElementById('email');
-    var password = document.getElementById('password');
-    var passwordConfirm = document.getElementById('passwordConfirm');
-
-
-    const promise = auth.createUserWithEmailAndPassword(email.value, password.value)
-    promise.catch(e=> alert(e.message));
-    alert("signUp")
-
-    
-  }
   </script>
 </body>
 <footer>
