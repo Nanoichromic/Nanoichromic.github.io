@@ -3,6 +3,8 @@
 <head>
 	<link rel="icon" href="https://Nanoichromic.github.io/images/logos/Nanoichromic-logo/default.png"  type="image/icon type">
 	<link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+	<!-- The core Firebase JS SDK is always required and must be listed first -->
+	<script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-app.js"></script>
 	<title>Sign Up</title>
 </head>
 <header class="text-gray-700 body-font">
@@ -30,11 +32,10 @@
   <div class="container px-5 py-24 mx-auto flex flex-wrap items-center">
     <div class="lg:w-2/6 md:w-1/2 bg-gray-200 rounded-lg p-8 flex flex-col md:ml-auto w-full mt-10 md:mt-0">
       <h2 class="text-gray-900 text-lg font-medium title-font mb-5">Sign Up</h2>
-      <input class="bg-white rounded border border-gray-400 focus:outline-none focus:border-indigo-500 text-base px-4 py-2 mb-4" placeholder="Full Name" type="text" wfd-id="253">
-      <input class="bg-white rounded border border-gray-400 focus:outline-none focus:border-indigo-500 text-base px-4 py-2 mb-4" placeholder="Email" type="email" wfd-id="252">
-      <input class="bg-white rounded border border-gray-400 focus:outline-none focus:border-indigo-500 text-base px-4 py-2 mb-4" placeholder="Password" type="password" wfd-id="252">
-      <input class="bg-white rounded border border-gray-400 focus:outline-none focus:border-indigo-500 text-base px-4 py-2 mb-4" placeholder="Password" type="password" wfd-id="252">
-      <button class="text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg" wfd-id="254">Sign Up</button>
+      <input class="bg-white rounded border border-gray-400 focus:outline-none focus:border-indigo-500 text-base px-4 py-2 mb-4" placeholder="Email" type="email" id = "email">
+      <input class="bg-white rounded border border-gray-400 focus:outline-none focus:border-indigo-500 text-base px-4 py-2 mb-4" placeholder="Password" type="password" id = "passwordConfirm">
+      <input class="bg-white rounded border border-gray-400 focus:outline-none focus:border-indigo-500 text-base px-4 py-2 mb-4" placeholder="Password" type="password" id = "password">
+      <button class="text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg" wfd-id="254" onclick="signUp()" id="signUp">Sign Up</button>
       <br>
       <button class="text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg" wfd-id="254"><a href="https://nanoichromic.github.io/signin.html">Have a account? Sign In</a></button>
     </div>
