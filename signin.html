@@ -3,6 +3,8 @@
 <head>
 	  <link rel="icon" href="https://Nanoichromic.github.io/images/logos/Nanoichromic-logo/default.png"  type="image/icon type">
 	<link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+	<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-app.js"></script>
 	<script src="https://nanoichromic.github.io/firebase_config.js"></script>
 	<title>Sign In</title>
 </head>
@@ -43,6 +45,19 @@
 </section>
 <body>
 	<script type="text/javascript">
+		  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyCfuRp_zi27fqIcZzvJrvrEVAI0IF9t74w",
+    authDomain: "nano-world-bfabd.firebaseapp.com",
+    databaseURL: "https://nano-world-bfabd.firebaseio.com",
+    projectId: "nano-world-bfabd",
+    storageBucket: "nano-world-bfabd.appspot.com",
+    messagingSenderId: "830719309449",
+    appId: "1:830719309449:web:585f99c08c9bdaa623f858",
+    measurementId: "G-PT6MZ9WN9P"
+  };
+    // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
 	const auth = firebase.auth();
 
 	function signIn(){
