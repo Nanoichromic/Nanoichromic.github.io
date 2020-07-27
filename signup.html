@@ -6,7 +6,6 @@
 	<!-- The core Firebase JS SDK is always required and must be listed first -->
 	<script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-app.js"></script>
 	<script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-auth.js"></script>
-	<script src="https://nanoichromic.github.io/firebase_config.js"></script>
 	<title>Sign Up</title>
 </head>
 <header class="text-gray-700 body-font">
@@ -28,6 +27,11 @@
         <path d="M5 12h14M12 5l7 7-7 7"></path>
       </svg></a>
     </button>
+    <button class="inline-flex items-center bg-gray-200 border-0 py-1 px-3 focus:outline-none hover:bg-gray-300 rounded text-base mt-4 md:mt-0" id="SignOutButton" onclick="signOut()">Sign Out
+      <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 ml-1" viewBox="0 0 24 24">
+        <path d="M5 12h14M12 5l7 7-7 7"></path>
+      </svg></a>
+    </button>
   </div>
 </header>
 <section class="text-gray-700 body-font">
@@ -44,8 +48,8 @@
 </section>
 <body>
 	<script type="text/javascript">
-	// Your web app's Firebase configuration
-    var firebaseConfig = {
+		  // Your web app's Firebase configuration
+  var firebaseConfig = {
     apiKey: "AIzaSyCfuRp_zi27fqIcZzvJrvrEVAI0IF9t74w",
     authDomain: "nano-world-bfabd.firebaseapp.com",
     databaseURL: "https://nano-world-bfabd.firebaseio.com",
@@ -58,21 +62,24 @@
     // Initialize Firebase
   firebase.initializeApp(firebaseConfig);
 	const auth = firebase.auth();
-	
-	
-	function signUp(){
+
+	function signIn(){
 		
 		var email = document.getElementById("email");
 		var password = document.getElementById("password");
 		
 		const promise = auth.createUserWithEmailAndPassword(email.value, password.value);
 		promise.catch(e => alert(e.message));
-
-		document.getElementById('SignInButton').innerHTML = 'Signed as ' + email;
-		else{
-			alert("Signed Up");
-		}
+		
 	}
+	function signOut() {
+		auth.signOut();
+	}
+	auth.onAuthStateChanged(function(user) {
+		if(user){
+		document.getElementById('SignInButton').innerHTML = 'Signed as ' + user.email;
+		}
+	})
 	</script>	
 </body>
 <footer>
