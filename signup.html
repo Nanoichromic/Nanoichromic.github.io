@@ -75,7 +75,7 @@
 	}
 	function signOut() {
     auth.signOut();
-    location()
+    window.location.reload()
   }
 	auth.onAuthStateChanged(function(user) {
 		if(user){
