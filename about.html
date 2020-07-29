@@ -65,6 +65,7 @@
   const auth = firebase.auth();
   function signOut() {
     auth.signOut();
+    document.getElementById('SignInButton').innerHTML = 'Sign In ';
   }
   auth.onAuthStateChanged(function(user) {
     if(user){

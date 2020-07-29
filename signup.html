@@ -74,8 +74,9 @@
 		
 	}
 	function signOut() {
-		auth.signOut();
-	}
+    auth.signOut();
+    document.getElementById('SignInButton').innerHTML = 'Sign In ';
+  }
 	auth.onAuthStateChanged(function(user) {
 		if(user){
 		document.getElementById('SignInButton').innerHTML = 'Signed as ' + user.email;
